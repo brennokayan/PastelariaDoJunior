@@ -146,3 +146,19 @@
     display: grid;
     grid-template-columns: auto auto auto;
 }
+.btnChurros{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height:10vh;
+    width: 10vw;
+    font-size: 25px;
+    margin-left: 0.5em;
+    margin-bottom: 0em;
+    background: white;
+    color: black;
+    border-radius: 25px;
+    border-width: 0px;
+    font-weight: bold;
+    text-align:center;
+}

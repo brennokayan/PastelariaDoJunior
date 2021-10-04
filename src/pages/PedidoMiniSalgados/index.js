@@ -406,11 +406,11 @@ const Pedidos = () => {
                     Após clicar sobre o botão de churros para seleciona-lo 
                 </p>
                 <div className="containerChurros">
-                    <button onClick={() => {MaisChurros()}}>+</button>
+                    <button className="btnChurros"onClick={() => {MaisChurros()}}>+</button>
                     <button className={botao7} onClick={()  => {Churros()}}>
                         {churros_quantidade} x Churros de Doce de Leite
                     </button>
-                    <button onClick={() => {MenosChurros()}}>-</button>
+                    <button className="btnChurros" onClick={() => {MenosChurros()}}>-</button>
                 </div>
                 <h3>Finalizar Pedido</h3>
                 <h3>{valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</h3>
