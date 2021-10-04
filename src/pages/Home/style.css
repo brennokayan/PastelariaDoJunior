@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+}
+.container{
+    background: rgb(255, 212, 23);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    
+}
+.container a{
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 15px;
+    text-decoration: none;
+    background: #fff;
+    font-size: 18px;
+    font-weight:700;
+    color: black;
+}
