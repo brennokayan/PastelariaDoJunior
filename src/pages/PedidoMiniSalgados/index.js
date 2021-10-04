@@ -401,7 +401,7 @@ const Pedidos = () => {
                     </button>
                     
                 </div>
-                <p>
+                <p className="churrosAlert">
                     Para selecionar churro precissa colocar a quantidade desejada clicando nos botões de ( + ) e de ( - ).<br/>
                     Após clicar sobre o botão de churros para seleciona-lo 
                 </p>
