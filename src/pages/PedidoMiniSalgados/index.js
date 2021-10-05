@@ -356,7 +356,7 @@ const Pedidos = () => {
                             <input type="text" value={pontoReferencia} onChange={(e) => setPontoReferencia(e.target.value)} placeholder="Ponto de Referência:"/>
                         </form>
                 </div>
-                <h3>Quantidade de mini salgados: {quantidade} Unidades</h3>              
+                <h3 style={{textAlign: 'center'}}>Quantidade de mini salgados: {quantidade} Unidades</h3>              
                     <div className="containerQuantidade">
                         <button onClick={Quantidade_Aumentar25} >
                             +25 unidades
