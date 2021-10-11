@@ -1,13 +1,54 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './style.css'
 import logo from './logo.png';
 const Home = ()=>{
+    const [link, setLink] = useState("")
+    const [abertos, setAbertos] = useState("")
+    const [hours, setHours] = useState(0)
+    const [minutes, setMinutes] = useState(0)
+    const [seconds, setSeconds] = useState(0)
+    
+
+    function ShowTime() {
+        var time = new Date();
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var second = time.getSeconds();
+        if (hour < 10) hour = "0" + hour;
+        if (minute < 10) minute = "0" + minute;
+        if (second < 10) second = "0" + second;
+        setHours(hour)
+        setMinutes(minute)
+        setSeconds(second)
+        
+    }
+    function initTime(){
+        setInterval(ShowTime, 1000)
+        if(hours >= 20){
+            setAbertos("Estamos fechados no momento, Horário de atendimento das 15:00 ás 20:00");
+            setLink("/")
+        }
+        if(hours < 15){
+            setAbertos("Ainda não iniciamos no momento aguarde só um instante, Horário de atendimento das 15:00 ás 20:00");
+            setLink("/")
+        }
+        if(hours <20 && hours >=15){
+            setAbertos("Estamos Aberto !!!\n Horário de atendimento das 15:00 ás 20:00");
+            setLink("/minis-salgados")
+        }
+    }
+
+    
+    useEffect(() => {
+        initTime();
+    });
     return (
         <div className="container">
             <img src={logo} alt="Logo da Pastelarias"/>
             <h1>Bem Vindo a Pastelaria do Junior</h1>
             <h3>Faça já seu pedido ou encomenda de Mini Salgados</h3>
-            <a href="/minis-salgados">Faça já o seu pedido !</a>
+            <h3>{abertos}<br/>{hours+" : "+minutes+" : "+seconds}</h3>
+            <a href={link}>Faça já o seu pedido !</a>
         </div>
     );
 }
