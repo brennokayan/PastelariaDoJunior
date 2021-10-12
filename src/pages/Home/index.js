@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import './style.css'
 import logo from './logo.png';
 const Home = ()=>{
+    var Horario = "Horário de atendimento das 15:00 ás 20:00"
     const [link, setLink] = useState("")
     const [abertos, setAbertos] = useState("")
     const [hours, setHours] = useState(0)
@@ -10,6 +11,7 @@ const Home = ()=>{
     
 
     function ShowTime() {
+        
         var time = new Date();
         var hour = time.getHours();
         var minute = time.getMinutes();
@@ -25,15 +27,15 @@ const Home = ()=>{
     function initTime(){
         setInterval(ShowTime, 1000)
         if(hours >= 20){
-            setAbertos("Estamos fechados no momento, Horário de atendimento das 15:00 ás 20:00");
+            setAbertos("Estamos fechados no momento.");
             setLink("/")
         }
         if(hours < 15){
-            setAbertos("Ainda não iniciamos no momento aguarde só um instante, Horário de atendimento das 15:00 ás 20:00");
+            setAbertos("Ainda não iniciamos nossos atendimentos no momento aguarde só um instante.");
             setLink("/")
         }
         if(hours <20 && hours >=15){
-            setAbertos("Estamos Aberto !!!\n Horário de atendimento das 15:00 ás 20:00");
+            setAbertos("Estamos Aberto!");
             setLink("/minis-salgados")
         }
     }
@@ -47,7 +49,7 @@ const Home = ()=>{
             <img src={logo} alt="Logo da Pastelarias"/>
             <h1>Bem Vindo a Pastelaria do Junior</h1>
             <h3>Faça já seu pedido ou encomenda de Mini Salgados</h3>
-            <h3>{abertos}<br/>{hours+" : "+minutes+" : "+seconds}</h3>
+            <h4>{abertos}<br/>{Horario}<br/>{hours+" : "+minutes+" : "+seconds}</h4>
             <a href={link}>Faça já o seu pedido !</a>
         </div>
     );

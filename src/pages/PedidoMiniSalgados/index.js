@@ -8,6 +8,9 @@ const Pedidos = () => {
     const [botao5, setBotao5] = useState("buttonDisable")
     const [botao6, setBotao6] = useState("buttonDisable")
     const [botao7, setBotao7] = useState("buttonDisable")
+    const [botao8, setBotao8] = useState("buttonDisablePAY")
+    const [botao9, setBotao9] = useState("buttonDisablePAY")
+    const [botao10, setBotao10] = useState("buttonDisablePAY")
 
     const [nome, setNome] = useState("")
     const [rua, setRua] = useState("")
@@ -21,6 +24,7 @@ const Pedidos = () => {
     const [auxiliar, setAuxiliar] = useState(0)
     const [auxiliar_quantidade, setAuxiliar_quantidade] = useState(0)
     const [tipo_de_pagamento, setTipo_de_pagamento] = useState("")
+    const [pix, setPix] = useState("")
 
     const [croquete_select, setCroquete_select] = useState(0);
     const [croquete, setCroquete] = useState("");
@@ -324,7 +328,38 @@ const Pedidos = () => {
         }
     }
 
-
+    function Dinheiro(){
+        if(botao8 === "buttonDisablePAY"){
+            setBotao8("buttonEnablePAY")
+            setTipo_de_pagamento(tipo_de_pagamento+" Dinheiro ")
+        }
+        if(botao8 === "buttonEnablePAY"){
+            setBotao8("buttonDisablePAY")
+            setTipo_de_pagamento("")
+        }
+    }
+    function Cartao(){
+        if(botao9 === "buttonDisablePAY"){
+            setBotao9("buttonEnablePAY")
+            setTipo_de_pagamento(tipo_de_pagamento+" Cartão de Crédito ou Débito ")
+        }
+        if(botao9 === "buttonEnablePAY"){
+            setBotao9("buttonDisablePAY")
+            setTipo_de_pagamento("")
+        }
+    }
+    function Pix(){
+        if(botao10 === "buttonDisablePAY"){
+            setBotao10("buttonEnablePAY")
+            setTipo_de_pagamento(tipo_de_pagamento+" PIX ")
+            setPix("Chave do Pix: 66 9 9912-3619 - Enviar o Comprovante para (66) 9 9912-3619 ")
+        }
+        if(botao10 === "buttonEnablePAY"){
+            setBotao10("buttonDisablePAY")
+            setTipo_de_pagamento("")
+            setPix("")
+        }
+    }
     useEffect(() => {
         QuantidadeChurros();
         ValidarQuantidade();
@@ -414,9 +449,16 @@ const Pedidos = () => {
                 </div>
                 <h3>Finalizar Pedido</h3>
                 <h3>{valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</h3>
+                <h3>Forma de Pagamento</h3>
+                <div className="containerTipoDePagamento">
+                    <button className={botao8} onClick={() => {Dinheiro()}}>Dinhiero</button>
+                    <button className={botao9} onClick={() => {Cartao()}}>Maq. de Cartão</button>
+                    <button className={botao10} onClick={() => {Pix()}}>PIX</button>
+                </div>
+                <h5>{pix}</h5>
                 <div className="containerSabores">
                     
-                    <a href={`https://api.whatsapp.com/send?phone=5566999123619&text=Nome%3A%20${nome}%0D%0A%0D%0AEndere%C3%A7o%3A%0D%0ABairro%3A%20%20${bairro};%20%20%20%0D%0ARua%3A%20%20${rua};%20%20%20%0D%0An%C3%BAmero e Complemento%3A%20%20${numero};%20%20%20%0D%0APonto%20de%20Refer%C3%AAncia%3A%20%20${pontoReferencia};%0D%0A%0D%0AQuantidade%3A%0D%0A${auxiliar_quantidade}%20unidades%20de%20mini%20salgados%0D%0A${churros_quantidade}%20unidades%20de%20Churros%0D%0A%0D%0ASabor%28es%29%3A%0D%0A${croquete+''+bolinha_de_queijo+''+coxinha_de_carne+''+coxinha_de_frango+''+traviseirinho+''+enrolado}%0D%0A${churros+churros_quantidade+" unidades"}%0D%0A%0D%0AValor%28R%24%29%3A%20${valor+",00"}`} target="_blanck" rel="external">Efetuar seu Pedido !</a>
+                    <a href={`https://api.whatsapp.com/send?phone=5566999123619&text=Nome%3A%20${nome}%0D%0A%0D%0AEndere%C3%A7o%3A%0D%0ABairro%3A%20%20${bairro};%20%20%20%0D%0ARua%3A%20%20${rua};%20%20%20%0D%0An%C3%BAmero e Complemento%3A%20%20${numero};%20%20%20%0D%0APonto%20de%20Refer%C3%AAncia%3A%20%20${pontoReferencia};%0D%0A%0D%0AQuantidade%3A%0D%0A${auxiliar_quantidade}%20unidades%20de%20mini%20salgados%0D%0A${churros_quantidade}%20unidades%20de%20Churros%0D%0A%0D%0ASabor%28es%29%3A%0D%0A${croquete+''+bolinha_de_queijo+''+coxinha_de_carne+''+coxinha_de_frango+''+traviseirinho+''+enrolado}%0D%0A${churros+churros_quantidade+" unidades"}%0D%0A%0D%0AForma de Pagameno%3A%0D%0A${tipo_de_pagamento}%0D%0A%0D%0AValor%28R%24%29%3A%20${valor+",00"}`} target="_blanck" rel="external">Efetuar seu Pedido !</a>
                 </div>
           </div>
       </body>
