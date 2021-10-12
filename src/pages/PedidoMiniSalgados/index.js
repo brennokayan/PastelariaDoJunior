@@ -451,7 +451,7 @@ const Pedidos = () => {
                 <h3>{valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</h3>
                 <h3>Forma de Pagamento</h3>
                 <div className="containerTipoDePagamento">
-                    <button className={botao8} onClick={() => {Dinheiro()}}>Dinhiero</button>
+                    <button className={botao8} onClick={() => {Dinheiro()}}>Dinheiro</button>
                     <button className={botao9} onClick={() => {Cartao()}}>Maq. de Cartão</button>
                     <button className={botao10} onClick={() => {Pix()}}>PIX</button>
                 </div>
