@@ -33,7 +33,7 @@ const Home = ()=>{
             setLink("/")
         }
         if(hours < 15){
-            setAbertos("Ainda não iniciamos nossos atendimentos no momento aguarde só um instante.");
+            setAbertos("Ainda não iniciamos nossos atendimentos no momento aguarde por alguns instante.");
             setLink("/")
         }
         if(hours <20 && hours >=15){
