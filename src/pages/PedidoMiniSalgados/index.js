@@ -378,7 +378,7 @@ const Pedidos = () => {
                             Quantidade Churros = {churros_quantidade}
                         </p>
                         <p>
-                            Escolhendo essa quantidade total {quantidade} unidades, poderá ser escolhido {quantidade_max} de sabor(es) de Mini Salgado
+                            Escolhendo essa quantidade total de {quantidade} unidades, poderá ser escolhido até {quantidade_max} sabor(es) de Mini Salgado
                         </p>
                     </div>
                     <div className="contentDados">
