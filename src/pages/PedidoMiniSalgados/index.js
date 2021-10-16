@@ -11,6 +11,7 @@ const Pedidos = () => {
     const [botao8, setBotao8] = useState("buttonDisablePAY")
     const [botao9, setBotao9] = useState("buttonDisablePAY")
     const [botao10, setBotao10] = useState("buttonDisablePAY")
+    
 
     const [nome, setNome] = useState("")
     const [rua, setRua] = useState("")

@@ -21,6 +21,7 @@ body{
 }
 .container h3 {
     text-align: center;
+
 }
 .container h4 {
     text-align: center;
@@ -34,4 +35,20 @@ body{
     font-size: 18px;
     font-weight:700;
     color: black;
+}
+.aberto{
+    padding: 15px;
+    background-color: rgb(8, 243, 0);
+    color: black;
+    margin: 0.7em 0px;
+    border-radius: 10px;
+    
+    
+}
+.fechado{
+    padding: 15px;
+    background-color: red;
+    color: white;
+    margin: 0.7em 0px;
+    border-radius: 10px;
 }
