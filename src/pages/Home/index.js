@@ -36,7 +36,7 @@ const Home = ()=>{
             setAbertos("Ainda não iniciamos nossos atendimentos no momento aguarde por alguns instante.");
             setLink("/")
         }
-        if(hours <20 && hours >=15){
+        if(hours <23 && hours >=15){
             setAbertos("Estamos Aberto!");
             setEstiloAtendimento("aberto")
             setLink("/minis-salgados")

@@ -20,6 +20,7 @@ const Pedidos = () => {
     const [pontoReferencia, setPontoReferencia] = useState("")
 
     const [quantidade, setQuantidade] = useState(0)
+    const [taxa_de_entrega, setTaxa_de_entrega] = useState(0)
     const [valor, setValor] = useState(0.00)
     const [quantidade_max, setQuantidade_max] = useState(0)
     const [auxiliar, setAuxiliar] = useState(0)
@@ -260,9 +261,9 @@ const Pedidos = () => {
         if(quantidade <= 0 ){
             setQuantidade(quantidade*0)
         }
-        setValor(quantidade*0.80+2)
+        setValor(quantidade*0.80+taxa_de_entrega)
         if(quantidade>25){
-            setValor(quantidade*0.60+2)
+            setValor(quantidade*0.60+taxa_de_entrega)
         }
         
     }
@@ -361,6 +362,62 @@ const Pedidos = () => {
             setPix("")
         }
     }
+    function Centro() {
+        setBairro("Centro")
+        setTaxa_de_entrega(3)
+    }
+    function VilaOperario() {
+        setBairro("Vila Operário")
+        setTaxa_de_entrega(3)
+    }
+    function Mod1() {
+        setBairro("Módulo 1")
+        setTaxa_de_entrega(3)
+    }
+    function Mod2() {
+        setBairro("Módulo 2")
+        setTaxa_de_entrega(3)
+    }
+    function Mod3() {
+        setBairro("Módulo 3")
+        setTaxa_de_entrega(3)
+    }
+    function Mod4() {
+        setBairro("Módulo 4")
+        setTaxa_de_entrega(3)
+    }
+    function Mod5() {
+        setBairro("Módulo 5")
+        setTaxa_de_entrega(4)
+    }
+    function Industrial() {
+        setBairro("Industrial")
+        setTaxa_de_entrega(4)
+    }
+    function Mod6() {
+        setBairro("Módulo 6")
+        setTaxa_de_entrega(5)
+    }
+    function Flamboyant() {
+        setBairro("Flamboyant")
+        setTaxa_de_entrega(5)
+    }
+    function PadreDuilio() {
+        setBairro("Padre Duílio")
+        setTaxa_de_entrega(5)
+    }
+    function Bandeirantes() {
+        setBairro("Residêncial Bandeirantes")
+        setTaxa_de_entrega(5)
+    }
+    function Palmiteira() {
+        setBairro("Palmiteira")
+        setTaxa_de_entrega(5)
+    }
+    function VilaOperario() {
+        setBairro("Vila Operário")
+        setTaxa_de_entrega(3)
+    }
     useEffect(() => {
         QuantidadeChurros();
         ValidarQuantidade();
@@ -388,9 +445,52 @@ const Pedidos = () => {
                         <form method="post" className="contentDados">
                             <input name="Rua" type="text" value={rua} onChange={(e) => setRua(e.target.value)} placeholder="Rua:"/>
                             <input type="text" value={numero} onChange={(e) => setNumeto(e.target.value)} placeholder="Número e Complemento:"/>
-                            <input type="text" value={bairro} onChange={(e) => setBairro(e.target.value)} placeholder="Bairro:"/>
                             <input type="text" value={pontoReferencia} onChange={(e) => setPontoReferencia(e.target.value)} placeholder="Ponto de Referência:"/>
                         </form>
+                            <h3>Bairro: {bairro}</h3><br/>
+                            <div className="Bairros">
+                                <button onClick={Centro} type="button" >
+                                    Centro
+                                </button>
+                                <button onClick={Mod1} type="button" >
+                                    Módulo 1
+                                </button>
+                                <button onClick={Mod2} type="button" >
+                                    Módulo 2
+                                </button>
+                                <button onClick={Mod3} type="button" >
+                                    Módulo 3
+                                </button>
+                                <button onClick={Mod4} type="button" >
+                                    Módulo 4
+                                </button>
+                                <button onClick={Mod5} type="button" >
+                                    Módulo 5
+                                </button>
+                                <button onClick={Mod6} type="button" >
+                                    Módulo 6
+                                </button>
+                                <button onClick={Industrial} type="button" >
+                                    Industrial
+                                </button>
+                                <button onClick={Palmiteira} type="button" >
+                                    Palmiteria
+                                </button>
+                                <button onClick={PadreDuilio} type="button" >
+                                    Padre Duílio
+                                </button>
+                                <button onClick={Bandeirantes} type="button" >
+                                    Residêncial Bandeirantes
+                                </button>
+                                <button onClick={Flamboyant} type="button" >
+                                    Residêncial Flamboyant
+                                </button>
+                                <button onClick={VilaOperario} type="button" >
+                                    Vila Operário
+                                </button>
+                            </div>
+                            
+                        
                 </div>
                 <h3 style={{textAlign: 'center'}}>Quantidade de mini salgados: {quantidade} Unidades</h3>              
                     <div className="containerQuantidade">
