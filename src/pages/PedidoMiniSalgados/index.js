@@ -366,10 +366,6 @@ const Pedidos = () => {
         setBairro("Centro")
         setTaxa_de_entrega(3)
     }
-    function VilaOperario() {
-        setBairro("Vila Operário")
-        setTaxa_de_entrega(3)
-    }
     function Mod1() {
         setBairro("Módulo 1")
         setTaxa_de_entrega(3)
